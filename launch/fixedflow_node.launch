@@ -1,0 +1,12 @@
+<launch>
+   
+   <!-- ZMART_IMG -->
+  
+   <!-- ZMART_IMG_GRID -->
+   <node pkg="zmart_img" type="fixedflow_node" name="fixedflow_node" output="screen">
+   </node >
+
+   <node pkg = "zmart_img" type ="image_show_node" name = "image_show_node" output="screen">
+   </node >
+
+</launch>

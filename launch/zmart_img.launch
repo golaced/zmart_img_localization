@@ -1,0 +1,26 @@
+
+<launch>
+   
+   <!-- ZMART_IMG -->
+  
+   <!-- ZMART_IMG_GRID -->
+   <node pkg="zmart_img" type="zmart_img_grid" name="zmart_img_grid" output="screen">
+     <param name="showImg" type="bool" value="true"/>
+     <param name="ImgTopic" type="string" value="/usb_cam/image_rect"/> 
+    
+   </node >
+   
+   <!-- ZMART_IMG_LOCALIZATION -->
+   <node pkg="zmart_img" type="zmart_img_localization" name="zmart_img_localization" output="screen"> 
+     <param name = "ImuTopic" type="string" value="/mavros/imu/data"/>
+     <param name = "OpticalFlowTopic" type="string" value="/serial_flow_msg"/> 
+     <param name = "TruePoseTopic" type="string" value="/true_pose"/>
+     <param name = "PointTopic" type="string" value="/endpoint"/>
+    </node>
+  
+   <!-- ZMART_IMG_FUSION 
+   <node pkg = "zmart_img" type = "zmart_img_fusion" name = "zmart_img_fusion" output = "screen">
+     <param name = "flow_topic" type = "string" value = "/path_pose"/>
+   </node-->
+
+</launch>
